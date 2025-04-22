@@ -1,4 +1,6 @@
 export GO111MODULE=on
+export CGO_ENABLE=0
+export GOOS=linux
 
 all: juicefs
 
@@ -21,7 +23,7 @@ endif
 
 juicefs: Makefile cmd/*.go pkg/*/*.go go.*
 	go version
-	go build -ldflags="$(LDFLAGS)"  -o juicefs .
+	go build -tags nosqlite -ldflags="$(LDFLAGS)"  -o juicefs .
 
 juicefs.cover: Makefile cmd/*.go pkg/*/*.go go.*
 	go version
