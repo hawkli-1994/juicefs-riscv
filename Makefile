@@ -23,7 +23,7 @@ endif
 
 juicefs: Makefile cmd/*.go pkg/*/*.go go.*
 	go version
-	go build -tags nosqlite -ldflags="$(LDFLAGS)"  -o juicefs .
+	go build -ldflags="$(LDFLAGS)"  -o juicefs .
 
 juicefs.cover: Makefile cmd/*.go pkg/*/*.go go.*
 	go version
